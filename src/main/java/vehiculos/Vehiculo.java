@@ -9,7 +9,8 @@ public class Vehiculo {
 	private int peso;
 	private String traccion;
 	private Fabricante fabricante;
-	private static int CantidadVehiculos = 0;
+	private Pais pais;
+	private static int CantidadVehiculos;
 	
 	public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, int precio, 
 			int peso, String traccion, Fabricante fabricante) {
@@ -23,6 +24,17 @@ public class Vehiculo {
 		this.traccion = traccion;
 		this.fabricante = fabricante;
 		CantidadVehiculos++;
+		
+		if(Fabricante.ventasPorFabricante.containsKey(fabricante)) {
+			Fabricante.ventasPorFabricante.put(fabricante, Fabricante.ventasPorFabricante.get(fabricante)+1);
+		}
+		else {
+			Fabricante.ventasPorFabricante.put(fabricante, 1);
+		}
+		
+		if(Pais.ventasPorPais.containsKey(pais)) {
+			Pais.ventasPorPais.put(pais, Pais.ventasPorPais.get(pais) + 1);
+		}
 	}
 		
 	public static String vehiculosPorTipo() {
@@ -101,6 +113,14 @@ public class Vehiculo {
 	
 	public static void setCantidadVehiculos(int cantidadVehiculos) {
 		Vehiculo.CantidadVehiculos = cantidadVehiculos;
+	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
 	}
 	
 }

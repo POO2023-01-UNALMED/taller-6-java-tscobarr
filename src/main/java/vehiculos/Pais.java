@@ -5,23 +5,23 @@ import java.util.Map;
 
 public class Pais {
 	private String nombre;
-	static Map<Pais, Integer> ventasPorPais = new HashMap <>();
+	static Map<Pais, Integer> ventasPorPais = new HashMap <Pais, Integer>();
 	
 	public Pais(String nombre) {
 		this.nombre = nombre;
 	}
 	
 	public static Pais paisMasVendedor() {
-		int max = -1;
+		int max = 0;
 		Pais paisMasVendedor = null;
 		
 		for(Map.Entry<Pais, Integer> entry: ventasPorPais.entrySet()) {
-			if (entry.getValue() >  max) {
+			if(entry.getValue() > max) {
 				max = entry.getValue();
 				paisMasVendedor = entry.getKey();
 			}
-		}
-		
+			
+		}	
 		return paisMasVendedor;
 	}
 		
