@@ -1,12 +1,11 @@
 package vehiculos;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Pais {
 	private String nombre;
-	private static Map<Pais, Integer> paises = new HashMap<>();
+	
+	public Pais(String nombre) {
+		this.nombre = nombre;
+	}
 	
 	public String getNombre() {
 		return nombre;
