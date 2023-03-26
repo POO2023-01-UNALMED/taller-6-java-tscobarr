@@ -9,7 +9,7 @@ public class Vehiculo {
 	private int peso;
 	private String traccion;
 	private Fabricante fabricante;
-	private int CantidadVehiculos = 0;
+	private static int CantidadVehiculos = 0;
 	
 	public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, int precio, 
 			int peso, String traccion, Fabricante fabricante) {
@@ -95,12 +95,12 @@ public class Vehiculo {
 		this.traccion = traccion;
 	}
 	
-	public int getCantidadVehiculos() {
+	public static int getCantidadVehiculos() {
 		return CantidadVehiculos;
 	}
 	
-	public void setCantidadVehiculos(int cantidadVehiculos) {
-		CantidadVehiculos = cantidadVehiculos;
+	public static void setCantidadVehiculos(int cantidadVehiculos) {
+		Vehiculo.CantidadVehiculos = cantidadVehiculos;
 	}
 	
 }
