@@ -34,6 +34,9 @@ public class Vehiculo {
 		if(Pais.ventasPorPais.containsKey(fabricante.getPais())) {
 			Pais.ventasPorPais.put(fabricante.getPais(), Pais.ventasPorPais.get(fabricante.getPais()) + 1);
 		}
+		else {
+			Pais.ventasPorPais.put(fabricante.getPais(), 1);
+		}
 	}
 		
 	public static String vehiculosPorTipo() {

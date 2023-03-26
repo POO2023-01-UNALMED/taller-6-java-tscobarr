@@ -10,7 +10,7 @@ public class Pais {
 	public Pais(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public static Pais paisMasVendedor() {
 		int max = 0;
 		Pais paisMasVendedor = null;
